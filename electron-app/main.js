@@ -22,9 +22,42 @@ function createWindow(){
     */
     ///////////////////////////////////
     win.loadFile('index.html')
-    win.webContents.openDevTools()
+   // win.webContents.openDevTools()
 }
 
-app.whenReady().then(createWindow)
+// app.on('before-quit',(e)=>{
+//    console.warn('Call Before Quit App!')
+//    e.preventDefault()  //its work here 
+// })
+
+app.on('will-quit',(e)=>{
+   console.warn('Call will Quit App!')
+   e.preventDefault()    // its not work here
+}) 
+
+
+app.on('browser-window-focus',()=>{
+   console.warn('You Are On App!')
+})
+
+
+
+app.on('browser-window-blur',()=>{
+   console.warn('You Are Unfocus App!')
+})
+
+
+
+
+setTimeout(() => {
+   console.warn(app.isReady())
+}, 1000);
+
+//app.whenReady().then(createWindow)
+
+app.on("ready",()=>{
+   createWindow()
+   console.warn("App is ready ->")
+})
 
 ////////////////////////////////////////

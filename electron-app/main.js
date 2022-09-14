@@ -7,13 +7,13 @@ function createWindow(){
    const win= new BrowserWindow({
       height:600,
       width:900,
-     // frame:true,
+      frame:false,
       backgroundColor:"green",
      // alwaysOnTop:false
      title:"Awesome App"
     });
 
-    /////////CHILD WINDOW///////////
+    /////////CHILD WINDOW/////////// 
 
     /*
     let child=new BrowserWindow({parent:win})

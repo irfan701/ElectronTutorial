@@ -13,6 +13,13 @@ function createWindow(){
      title:"Awesome App"
     });
 
+    /////////CHILD WINDOW///////////
+
+    /*
+    let child=new BrowserWindow({parent:win})
+    child.loadFile('index.html')
+    child.show()
+    */
     ///////////////////////////////////
     win.loadFile('index.html')
     win.webContents.openDevTools()
